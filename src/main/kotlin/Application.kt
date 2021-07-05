@@ -1,5 +1,7 @@
 package atsumori.management
 
+import atsumori.management.router.helloName
+import com.sun.tools.javac.file.Locations
 import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.request.*
@@ -10,6 +12,7 @@ import kotlinx.html.*
 import kotlinx.css.*
 import io.ktor.client.*
 import io.ktor.client.engine.apache.*
+import io.ktor.features.*
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -17,12 +20,15 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 @kotlin.jvm.JvmOverloads
 fun Application.module() {
     val client = HttpClient(Apache) {
+
     }
 
-    routing {
+    install(Routing) {
         get("/") {
-            call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
+            call.respond("This is root!")
         }
+
+        helloName()
     }
 }
 
