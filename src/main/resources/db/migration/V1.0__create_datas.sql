@@ -1,6 +1,6 @@
 CREATE TABLE datas(
-    dataId INT PRIMARY KEY,
-    furnitureId VARCHAR(100) NOT NULL,
-    fishId VARCHAR(100) NOT NULL,
-    insectId VARCHAR(100) NOT NULL
+    dataId INT SERIAL,
+    furnitureURL VARCHAR(100) NOT NULL,
+    fishURL VARCHAR(100) NOT NULL,
+    insectURL VARCHAR(100) NOT NULL
 );
