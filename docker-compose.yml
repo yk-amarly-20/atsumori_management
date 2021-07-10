@@ -21,8 +21,17 @@ services:
     <<: *flyway-template
     command: info
 
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_TYPE=postgres
+    depends_on:
+      - db
   db:
     image: postgres:latest
+    restart: always
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=pass
