@@ -44,6 +44,14 @@ dependencies {
     implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
     implementation "io.ktor:ktor-client-apache:$ktor_version"
 
+    implementation 'io.github.cdimascio:dotenv-kotlin:6.2.2'
+
+    implementation "org.postgresql:postgresql:42.2.12" //⇦追加
+    implementation 'org.jdbi:jdbi3-sqlobject:3.20.0'   //⇦追加
+    implementation 'org.jdbi:jdbi3-kotlin:3.20.0' //⇦追加
+
+    implementation "io.ktor:ktor-jackson:$ktor_version"
+
     implementation "org.postgresql:postgresql:42.2.12"
 
     implementation "io.ktor:ktor-locations:$ktor_version"
